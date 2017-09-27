@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+    <body>
+    <center>
+    <h4>What to do:</h4>
+    <p>Just upload an image of the clothing you'd like to wear, and an image of your closet.<br>
+    We'll find what clothing in your closet best compliments what you've already chosen.</p>
+    <hr>
+    <h2>How would you prefer to match colors?</h2>
+    <form action = "/results" method = "post" name = "form" enctype=multipart/form-data>
+        <p>
+            * If you want high contrast and to stand out, select <b>"Complementary"</b><br>
+            * If you want something vibrant but more subtle, select <b>"Triadic"</b><br><br>
+            <img src="{{url_for('static',filename='MatchType.png')}}" class="img-rounded" alt="Cinque Terre" width="300" height="150"><br>
+            <select name="matchtype">
+                <option value="complement">Complementary (180 deg)</option>
+                <option value="triad">Triadic (120 deg)</option>
+            </select>
+        </p>
+        <p><br>
+        <h2>Upload Your Images! </h2><br>
+            Upload an image of the clothing you want to match:<br>
+            <input id="fileupload" name="tomatch" type="file" />
+        </p>
+        <p><br>
+            Upload an image of the closet you want to search:<br>
+            <input id="fileupload" name="closet" type="file" />
+        </p><br>
+        <p><input type="submit" value="Harmonize!!!"></p>
+    </form>
+    <br><br><br>
+    <br><br><br>
+    </center>
+    </body>
+</div>
+{{ dataframe|safe }}
+{% endblock %}

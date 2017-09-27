@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+<center>
+    <body>
+        <h2>Scott L. Morello</h2><br>
+        <img src="{{url_for('static',filename='Scott2.jpg')}}" class="img-rounded" alt="Cinque Terre" width="200" height="200"><br>
+        <a href="https://www.linkedin.com/in/scott-morello/">Find Scott on LinkedIn</a>
+        <p> Scott is a Data Science Fellow at Insight Data Science in Boston, MA.<br>
+        His background is in Quantitative and Experimental Marine Ecology, but<br>
+        he's always had his heart in data analysis. Scott is also Red-Green and <br>
+        Blue-Purple colorblind, and conceived cHarmony as a tool to aid colorblind<br>
+        individuals in getting dressed. Worldwide, 1/12 men, and 1/200 women have some form<br>
+        of colorblindness. Any data-driven solutions to interpret and match colors are<br>
+        incredibly useful in everyday activities such as "getting dressed".</p>
+        <br>
+        <br>
+        <p> Or checkout this presentation about Scott's Project!</p>
+    
+    </body>
+</center>
+</div>
+{{ dataframe|safe }}
+{% endblock %}

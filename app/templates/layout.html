@@ -1,0 +1,27 @@
+<!doctype html>
+<head>
+    <title>cHarmony</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+</head>
+
+<div class="page">
+
+
+<nav class="navbar navbar-inverse">
+<center>
+    <div class="jumbotron">
+        <h1>Welcome to cHarmony!</h1> 
+        <p>Harmonizing Clothes and Colors with a Click</p> 
+    </div>
+</center>
+    <p class="navbar-text">     </p>
+    <ul class="nav navbar-nav">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+    </ul>
+</nav>
+    {% block body %}
+    {% endblock %}
+</div>

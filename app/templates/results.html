@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="container-fluid">
+<center>
+    <body>
+        <h2>We Recommend Choosing One of These Items</h2><br>
+        <p> Based on the <mark><b>{{matchtype}}</b></mark> matching scheme you selected,<br>
+        your <mark><b>{{input}}</b></mark> clothes match the following colors (highlighted below):</p>
+        {% for color in result %}
+            <p><mark><b>* {{ color }}</b></mark></p>
+        {% endfor %}
+        <br>
+        <p> Clothes that do not match are "greyed out".</p>
+    <img class="img-responsive" src="{{url_for('static',filename='final.png')}}" />
+    
+    </body>
+</center>
+</div>
+<br><br><br><br><br>
+{{ dataframe|safe }}
+{% endblock %}
