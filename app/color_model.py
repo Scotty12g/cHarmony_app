@@ -220,7 +220,7 @@ def FindColor(matchtype, tomatch_path, closet_path):
     SEGMENT_HIGHLIGHT_BOOL = np.reshape([(val in COLOR_MATCH) for val in SEGMENT_COLORS],np.array(SEGMENT_COLORS).shape)
     SEGMENT_HIGHLIGHT = unique_segments[SEGMENT_HIGHLIGHT_BOOL]
 
-    # Now create another image with all the "matching" colors highlighted in yellow
+    # Now create another image with all the "matching" colors highlighted, and non-matching darkened
     HIGHLIGHT_MASK = np.zeros(IMAGE_TO_SEGMENT.shape, dtype=np.uint8)
 
 
