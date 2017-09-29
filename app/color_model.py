@@ -125,7 +125,7 @@ def FindColor(matchtype, tomatch_path, closet_path):
     maxX = IMAGE_TO_MATCH.shape[1]
     maxY = IMAGE_TO_MATCH.shape[0]
     one_ycord = maxY/100.0
-    one_xcord = maxY/100.0
+    one_xcord = maxX/100.0
 
     # Select 400 random points from the center of the image
     ycord = (np.random.choice(np.arange(one_ycord*40,one_ycord*60,1),400)).astype(int)
@@ -144,6 +144,9 @@ def FindColor(matchtype, tomatch_path, closet_path):
     counts = np.bincount(pos)
     maxpos = counts.argmax()
     IMAGE_TO_MATCH_OUTPUT = unique[maxpos]
+    
+    # get all color labels
+    all_Labels = color_detector.classes_
     
     # Determine the opposite color
     color_dict = {'red':(255, 0, 0),
@@ -172,8 +175,9 @@ def FindColor(matchtype, tomatch_path, closet_path):
     # If it's a neutral color, return all colors except the one you're matching
     # NOTE: only supports ONE color from the IMAGE_TO_MATCH at the moment
     if IMAGE_TO_MATCH_OUTPUT in ['black', 'brown', 'grey', 'white']:
-        COLOR_MATCH = np.unique(all_Labels).tolist()
-        COLOR_MATCH = list(filter(lambda x: x!= IMAGE_TO_MATCH_OUTPUT, COLOR_MATCH))
+        #COLOR_MATCH = np.unique(all_Labels).tolist()
+        #COLOR_MATCH = list(filter(lambda x: x!= IMAGE_TO_MATCH_OUTPUT, COLOR_MATCH))
+        COLOR_MATCH = ['red', 'yellow', 'green', 'cyan', 'blue', 'magenta']
     else:
         MATCHING_COLORS=rotate_colors(color_dict[IMAGE_TO_MATCH_OUTPUT],HOW_TO_MATCH_dict[HOW_TO_MATCH])
         MATCHING_COLOR_LIST = list()
