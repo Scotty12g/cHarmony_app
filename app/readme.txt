@@ -1,7 +1,7 @@
-Files to import for app
+Files in this folder:
 
-Pants:
-/Users/scottmorello/Dropbox/Archives/Jobs/Insight_Data_Science/Clothing Matching Project/Python_Work/mens_closet_images/my images/IMG_3346.JPG
+* "__init__.py": the init file for the flask application
 
-Closet:
-/Users/scottmorello/Dropbox/Archives/Jobs/Insight_Data_Science/Clothing Matching Project/Python_Work/mens_closet_images/try1.jpeg
+* "color_model.py": the image data pipeline at the heart of cHarmony. For more information, see the included presentation in www.scottlmorello.com/about
+
+* "test_pick.py": a function called to pickle files
